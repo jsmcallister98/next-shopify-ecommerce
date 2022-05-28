@@ -20,7 +20,8 @@ async function ShopifyData(query: any) {
 
     return data;
   } catch (error) {
-    throw new Error("Products not fetched");
+    console.log(error);
+    // throw new Error("Products not fetched");
   }
 }
 

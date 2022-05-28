@@ -6,9 +6,9 @@ export interface LayoutProps extends React.HTMLProps<HTMLDivElement> {}
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="flex flex-col justify-between min-h-screen bg-white dark:bg-slate-900">
+    <div className="flex min-h-screen flex-col justify-between bg-white dark:bg-slate-900">
       <Nav />
-      <main>{children}</main>
+      {children}
       <Footer />
     </div>
   );

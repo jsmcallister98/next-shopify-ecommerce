@@ -5,7 +5,7 @@ import Head from "next/head";
 
 export default function Home({ products }: any) {
   return (
-    <div className="">
+    <div className="home bg-mobile-scene-with-wave bg-contain bg-no-repeat lg:bg-scene-with-wave">
       <Head>
         <title>McGolf Golf Apparel</title>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />

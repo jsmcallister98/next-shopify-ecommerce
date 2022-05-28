@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider defaultTheme="light" attribute="class">
       <ShopProvider>
         <Layout>
           <Component {...pageProps} key={router.asPath} />

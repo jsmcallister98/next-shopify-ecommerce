@@ -3,8 +3,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import Link from "next/link";
-import { CartContext } from "../context/shopContext";
-import { formatter } from "../utils/helpers";
+import { CartContext } from "@context/shopContext";
+import { formatter } from "@utils/helpers";
 
 export interface MiniCartProps extends React.HTMLProps<HTMLDivElement> {
   cart: any;
@@ -24,7 +24,7 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
       <Dialog
         initialFocus={cancelButtonRef}
         as="div"
-        className="fixed z-50 inset-0 overflow-hidden"
+        className="fixed inset-0 z-50 overflow-hidden"
         onClose={() => setCartOpen(!cartOpen)}
       >
         <div className="absolute inset-0 overflow-hidden">
@@ -37,10 +37,10 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            <Dialog.Overlay className="absolute inset-0 bg-gray-100 bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
-          <div className="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+          <div className="fixed inset-y-0 right-0 flex max-w-full pl-10">
             <Transition.Child
               as={Fragment}
               enter="transform transition ease-in-out duration-500"
@@ -51,13 +51,13 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
               leaveTo="translate-x-full"
             >
               <div className="w-screen max-w-md">
-                <div className="h-full flex flex-col bg-white dark:bg-slate-800 shadow-xl overflow-y-scroll">
-                  <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
+                <div className="flex h-full flex-col overflow-y-scroll bg-white bg-opacity-70 shadow-xl backdrop-blur backdrop-filter dark:bg-slate-800">
+                  <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                     <div className="flex items-start justify-between">
                       <Dialog.Title className="text-lg font-medium text-gray-900 dark:text-white">
                         Shopping cart
                       </Dialog.Title>
-                      <div className="ml-3 h-7 flex items-center">
+                      <div className="ml-3 flex h-7 items-center">
                         <button
                           ref={cancelButtonRef}
                           type="button"
@@ -79,9 +79,9 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
                           {cart.map((product: any) => (
                             <li
                               key={product.id + Math.random()}
-                              className="py-6 flex"
+                              className="flex py-6"
                             >
-                              <div className="relative flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
+                              <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                 <Link
                                   href={`/products/${product.handle}`}
                                   passHref
@@ -97,7 +97,7 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
                                 </Link>
                               </div>
 
-                              <div className="ml-4 flex-1 flex flex-col">
+                              <div className="ml-4 flex flex-1 flex-col">
                                 <div>
                                   <div className="flex justify-between text-base font-medium text-gray-900 dark:text-white">
                                     <h3>
@@ -118,7 +118,7 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
                                     {product.variantTitle}
                                   </p>
                                 </div>
-                                <div className="flex-1 flex items-end justify-between text-sm">
+                                <div className="flex flex-1 items-end justify-between text-sm">
                                   <p className="text-gray-500 dark:text-gray-300">
                                     Qty {product.variantQuantity}
                                   </p>
@@ -141,7 +141,7 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
                     </div>
                   </div>
                   {cart.length > 0 && (
-                    <div className="border-t border-gray-200 dark:border-slate-500 py-6 px-4 sm:px-6">
+                    <div className="border-t border-gray-200 py-6 px-4 dark:border-slate-500 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900 dark:text-white">
                         <p>Subtotal</p>
                         <p>{formatter.format(cartTotal)}</p>
@@ -152,12 +152,12 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
                       <div className="mt-6">
                         <a
                           href={checkoutUrl}
-                          className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-black hover:bg-gray-800 dark:text-black dark:bg-slate-400 dark:hover:bg-slate-500"
+                          className="flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-800 dark:bg-slate-400 dark:text-black dark:hover:bg-slate-500"
                         >
                           Checkout
                         </a>
                       </div>
-                      <div className="mt-6 flex justify-center text-sm text-center text-gray-500 dark:text-gray-300">
+                      <div className="mt-6 flex justify-center text-center text-sm text-gray-500 dark:text-gray-300">
                         <p>
                           or{" "}
                           <button
