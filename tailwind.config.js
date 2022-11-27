@@ -7,13 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        "dynamic-xl": "clamp(1.5rem, 4vw, 6rem)",
+      },
       backgroundImage: {
-        "main-scene": "url(/images/scene.svg)",
-        "scene-with-wave": "url(/images/scene-with-wave.svg)",
-        "mobile-scene-with-wave": "url(/images/is-svg.svg)",
-        "large-scene": "url(/images/scene-large.svg)",
-        "mobile-scene": "url(/images/scene-mobile.svg)",
-        "main-wave": "url(/images/wave.svg)",
+        "mobile-scene": "url(/images/is-svg1.svg)",
+        "main-scene": "url(/images/main-scene.svg)",
       },
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
@@ -23,7 +22,7 @@ module.exports = {
       sm: "640px",
       // => @media (min-width: 640px) { ... }
 
-      md: "900px",
+      md: "880px",
       // => @media (min-width: 768px) { ... }
 
       lg: "1024px",

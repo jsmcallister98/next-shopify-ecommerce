@@ -1,6 +1,6 @@
 import { AppProps } from "next/app";
 import "../styles/globals.css";
-import Layout from "@components/Layout";
+import Layout from "@components/Layout/Layout";
 import ShopProvider from "../context/shopContext";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "next-themes";

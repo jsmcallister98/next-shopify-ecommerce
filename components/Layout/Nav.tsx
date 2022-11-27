@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useContext, useState } from "react";
-import MiniCart from "./MiniCart";
+import MiniCart from "../MiniCart";
 import MobileNav from "./MobileNav";
-import MobileMiniCart from "./MobileMiniCart";
+import MobileMiniCart from "../MobileMiniCart";
 import ThemeToggle from "./ThemeToggle";
 import { motion } from "framer-motion";
 import { CartContext } from "@context/shopContext";
@@ -30,7 +30,7 @@ const DesktopNav = () => {
           : !userHasScrolled && router?.pathname === "/"
           ? "fixed h-32 bg-transparent shadow-none"
           : "fixed h-20 bg-transparent shadow-none",
-        "top-0 z-50 hidden w-full max-w-[100vw] items-center justify-between bg-opacity-50 backdrop-blur backdrop-filter transition-all duration-1000 ease-in-out dark:bg-gray-900 dark:bg-opacity-75 md:flex"
+        "top-0 z-50 hidden w-full max-w-[100vw] items-center justify-between bg-opacity-50 backdrop-blur backdrop-filter transition-all duration-500 ease-in-out dark:bg-gray-900 dark:bg-opacity-75 md:flex"
       )}
     >
       <div className="flex w-52 items-center">

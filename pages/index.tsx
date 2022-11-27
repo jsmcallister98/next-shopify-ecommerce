@@ -1,11 +1,12 @@
-import { getProductsInCollection } from "../lib/shopify";
-import ProductList from "../components/ProductList";
-import Hero from "../components/Hero";
+import { getProductsInCollection } from "@lib/shopify";
+import ProductList from "@components/ProductList";
+import Hero from "@components/Hero/Hero";
 import Head from "next/head";
+import HeroProductSection from "@components/Hero/HeroProductSection";
 
 export default function Home({ products }: any) {
   return (
-    <div className="home bg-mobile-scene-with-wave bg-contain bg-no-repeat lg:bg-scene-with-wave">
+    <div className="relative inline-block min-h-screen w-screen overflow-hidden">
       <Head>
         <title>McGolf Golf Apparel</title>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -31,7 +32,21 @@ export default function Home({ products }: any) {
         <meta property="og:locale" content="en_US" />
         <meta property="og:site_name" content="Casual golf apparel" />
       </Head>
-      <Hero />
+      <div className="relative mb-80 h-max w-full">
+        <img
+          src={"/images/main-scene.svg"}
+          className="pointer-events-none z-0 h-auto max-h-screen w-full object-cover"
+        />
+        <div className="absolute top-0 left-0 right-0 mx-auto">
+          <Hero products={products} />
+        </div>
+        <HeroProductSection products={products} />
+      </div>
+      <div className="flex justify-center">
+        <button className="ml-80 -mt-16 mb-20 rounded-2xl bg-[#45B684] py-6 px-20 text-xl font-medium text-white">
+          Shop Now
+        </button>
+      </div>
       <ProductList products={products} />
     </div>
   );

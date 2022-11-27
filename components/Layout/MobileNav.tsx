@@ -71,7 +71,7 @@ export default function MobileNav() {
     <Popover
       className={classNames(
         scrollPosition > 0 ? "bg-white" : "bg-transparent",
-        "fixed top-0 z-50 w-screen bg-opacity-50 px-6 backdrop-blur backdrop-filter transition-all duration-1000 ease-in-out dark:bg-gray-900 dark:bg-opacity-75 md:hidden"
+        "fixed top-0 z-50 w-screen bg-opacity-50 px-6 backdrop-blur backdrop-filter transition-all duration-500 ease-in-out dark:bg-gray-900 dark:bg-opacity-75 md:hidden"
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
