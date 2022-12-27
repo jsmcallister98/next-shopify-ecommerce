@@ -18,25 +18,25 @@ export const NavigationMenu = () => {
   const categories = [
     {
       name: "Tees",
-      description: "",
+      description: "Short sleeve necessities for warm days",
       href: "/products",
       icon: ChartBarIcon,
     },
     {
       name: "Sweatshirts",
-      description: "",
+      description: "Cozy and casual long sleeve sweaters",
       href: "/products",
       icon: CursorArrowRaysIcon,
     },
     {
       name: "Hoodies",
-      description: "",
+      description: "Stay warm and look cool",
       href: "/products",
       icon: ShieldCheckIcon,
     },
     {
       name: "Hats",
-      description: "",
+      description: "Golfers just look weird without hats, you know?",
       href: "/products",
       icon: Squares2X2Icon,
     },
@@ -107,7 +107,7 @@ export const NavigationMenu = () => {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="-m-3 flex items-center rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50"
+                      className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50"
                     >
                       <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
                         <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -116,9 +116,9 @@ export const NavigationMenu = () => {
                         <p className="text-base font-medium text-gray-900">
                           {item.name}
                         </p>
-                        {/* <p className="mt-1 text-sm text-gray-500">
+                        <p className="mt-1 text-sm text-gray-500">
                           {item.description}
-                        </p> */}
+                        </p>
                       </div>
                     </Link>
                   ))}

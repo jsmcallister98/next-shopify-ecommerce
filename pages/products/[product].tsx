@@ -1,7 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { FC } from "react";
 import { getAllProducts, getProduct } from "@lib/shopify";
-import ProductPageContent from "@components/ProductPageContent";
 import Nav from "@components/v2/Nav";
 import { ProductDetails as IProductDetails } from "productDetails.types";
 import ProductDetailsPage from "@components/v2/Pages/ProductDetails";
@@ -15,7 +14,6 @@ const ProductPage: FC<ProductPageProps> = ({ product }) => {
   return (
     <div className="min-h-screen">
       <Nav variant="dark" />
-      {/* <ProductPageContent product={product} /> */}
       <ProductDetailsPage product={product} />
     </div>
   );
