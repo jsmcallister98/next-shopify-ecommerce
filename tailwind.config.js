@@ -15,7 +15,7 @@ module.exports = {
         "main-scene": "url(/images/main-scene.svg)",
       },
       fontFamily: {
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
     },
     screens: {
@@ -35,6 +35,10 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/typography"),
+  ],
   darkMode: "class",
 };

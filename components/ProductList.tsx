@@ -8,7 +8,7 @@ export interface ProductListProps extends React.HTMLProps<HTMLDivElement> {
 const ProductList: FC<ProductListProps> = ({ products }) => {
   return (
     <div className="bg-white dark:bg-slate-900">
-      <div className="mx-auto max-w-2xl py-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-[100rem] py-8 px-4 sm:px-6 lg:px-10">
         <h2 className="mb-6 text-2xl font-extrabold text-gray-900 dark:text-white">
           Products
         </h2>

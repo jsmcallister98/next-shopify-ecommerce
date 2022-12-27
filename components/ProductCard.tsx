@@ -15,15 +15,15 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const price = product.node.priceRange.minVariantPrice.amount;
 
   return (
-    <Link href={`/products/${handle}`}>
+    <Link legacyBehavior href={`/products/${handle}`}>
       <a className="group">
-        <div className="relative w-full overflow-hidden rounded-3xl bg-gray-200 dark:bg-gray-700">
-          <div className="relative h-72 group-hover:opacity-75">
+        <div className="relative w-full overflow-hidden rounded bg-gray-200 dark:bg-gray-700">
+          <div className="relative aspect-[7/8] group-hover:opacity-75">
             <Image
+              className="object-cover"
               src={originalSrc}
               alt={altText}
-              layout="fill"
-              objectFit="cover"
+              fill
             ></Image>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import { getProductsInCollection } from "@lib/shopify";
-import ProductList from "@components/ProductList";
+import Category from "@components/v2/Pages/Category";
 
 export default function Products({ products }: any) {
   return (
-    <div className="mt-20">
-      <ProductList products={products} />
+    <div className="">
+      <Category products={products} />
     </div>
   );
 }

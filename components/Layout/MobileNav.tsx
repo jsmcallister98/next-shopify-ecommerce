@@ -2,19 +2,18 @@
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
-  BookmarkAltIcon,
+  // BookmarkAltIcon,
   CalendarIcon,
   ChartBarIcon,
-  CursorClickIcon,
-  MenuIcon,
-  RefreshIcon,
+  // CursorClickIcon,
+  // MenuIcon,
+  // RefreshIcon,
   ShieldCheckIcon,
-  SupportIcon,
-  ViewGridIcon,
-  XIcon,
-} from "@heroicons/react/outline";
+  // SupportIcon,
+  // ViewGridIcon,
+  // XIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
 import { useScrollPosition } from "@utils/hooks";
 import { classNames } from "@utils/helpers";
 
@@ -27,7 +26,7 @@ const solutions = [
   {
     name: "Hoodies",
     href: "/products/hoodies",
-    icon: CursorClickIcon,
+    icon: ChartBarIcon,
   },
   {
     name: "Sweaters",
@@ -37,12 +36,12 @@ const solutions = [
   {
     name: "Tees",
     href: "/products/tees",
-    icon: ViewGridIcon,
+    icon: ChartBarIcon,
   },
   {
     name: "Hats",
     href: "/products/hats",
-    icon: RefreshIcon,
+    icon: ChartBarIcon,
   },
 ];
 
@@ -50,12 +49,12 @@ const resources = [
   {
     name: "McGolf Collection",
     href: "/collections/mcgolf",
-    icon: SupportIcon,
+    icon: ChartBarIcon,
   },
   {
     name: "Swang Collection",
     href: "/collections/swang",
-    icon: BookmarkAltIcon,
+    icon: ChartBarIcon,
   },
   {
     name: "OnCourse Collection",
@@ -77,7 +76,7 @@ export default function MobileNav() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href={"/"}>
+            <Link legacyBehavior href={"/"}>
               <a href="/">
                 <span className="sr-only">Workflow</span>
                 <img
@@ -89,12 +88,9 @@ export default function MobileNav() {
             </Link>
           </div>
           <div className="-my-2 -mr-2 flex md:hidden">
-            <div className="mr-5 pt-2">
-              <ThemeToggle />
-            </div>
             <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-slate-900 dark:text-white">
               <span className="sr-only">Open menu</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              <ChartBarIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
         </div>
@@ -126,7 +122,7 @@ export default function MobileNav() {
                 <div className="-mr-2">
                   <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-slate-900 dark:text-white">
                     <span className="sr-only">Close menu</span>
-                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                    <ChartBarIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
               </div>

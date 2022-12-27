@@ -16,12 +16,7 @@ const ProductPageContent: FC<ProductPageContentProps> = ({ product }) => {
   product.images.edges.map((image: any, i: number) => {
     images.push(
       <SwiperSlide key={`slide-${i}`}>
-        <Image
-          src={image.node.originalSrc}
-          alt={image.node.altText}
-          layout="fill"
-          objectFit="cover"
-        />
+        <Image src={image.node.originalSrc} alt={image.node.altText} fill />
       </SwiperSlide>
     );
   });
@@ -30,8 +25,8 @@ const ProductPageContent: FC<ProductPageContentProps> = ({ product }) => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center space-y-8 md:flex-row md:items-start md:space-y-0 md:space-x-4 lg:space-x-8 max-w-6xl w-11/12 mx-auto">
-        <div className="w-full mad-w-md border bg-white rounded-2xl overflow-hidden shadow-lg md:w-1/2">
+      <div className="mx-auto flex w-11/12 max-w-6xl flex-col items-center justify-center space-y-8 pt-12 md:flex-row md:items-start md:space-y-0 md:space-x-4 lg:space-x-8">
+        <div className="mad-w-md w-full overflow-hidden rounded-2xl border bg-white shadow-lg md:w-1/2">
           <div className="relative h-96 w-full">
             <Swiper
               style={
@@ -51,7 +46,7 @@ const ProductPageContent: FC<ProductPageContentProps> = ({ product }) => {
         </div>
         <ProductForm product={product} />
       </div>
-      <p className="pt-16 space-y-8 md:space-x-4 lg:space-x-8 max-w-3xl w-11/12 mx-auto">
+      <p className="mx-auto w-11/12 max-w-3xl space-y-8 pt-16 text-center md:space-x-4 lg:space-x-8">
         {product.description}
       </p>
       <RecommendedList
