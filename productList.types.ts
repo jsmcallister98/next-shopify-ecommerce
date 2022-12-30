@@ -32,6 +32,6 @@ export interface Edge {
 }
 
 export interface Node2 {
-  originalSrc: string;
+  url: string;
   altText: string;
 }

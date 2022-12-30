@@ -9,6 +9,9 @@ import RecommendedList from "@components/RecommendedList";
 import { ProductDetails as IProductDetails } from "productDetails.types";
 import { formatter } from "@utils/helpers";
 import { CartContext } from "@context/shopContext";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination } from "swiper";
+import Image from "next/image";
 
 const product = {
   name: "Basic Tee",
@@ -113,7 +116,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       id: variant.node.id,
       title: product.title,
       handle: product.handle,
-      image: variant.node.image?.originalSrc,
+      image: variant.node.image?.url,
       options: allOptions,
       variantTitle: variant.node.title,
       variantPrice: variant.node.priceV2.amount,
@@ -156,9 +159,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               as="div"
               className="mt-8 flex  flex-col-reverse lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0"
             >
-              {/* Image selector */}
-              <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-                <Tab.List className="grid grid-cols-4 gap-6">
+              <div className="mx-auto mt-6 w-full max-w-2xl lg:max-w-none">
+                <Tab.List className="grid grid-cols-4 gap-3 sm:gap-6">
                   {product.images.edges.map((image) => (
                     <Tab
                       key={image.node.altText}
@@ -171,10 +173,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                             {image.node.altText}{" "}
                           </span>
                           <span className="absolute inset-0 overflow-hidden rounded-md">
-                            <img
-                              src={image.node.originalSrc}
+                            <Image
+                              src={image.node.url}
                               alt=""
                               className="h-full w-full object-cover object-center"
+                              fill
                             />
                           </span>
                           <span
@@ -194,10 +197,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               <Tab.Panels className="aspect-w-1 aspect-h-1 w-full">
                 {product.images.edges.map((image) => (
                   <Tab.Panel key={image.node.altText}>
-                    <img
-                      src={image.node.originalSrc}
+                    <Image
+                      src={image.node.url}
                       alt={image.node.altText}
                       className="h-full w-full object-cover object-center sm:rounded-lg"
+                      fill
                     />
                   </Tab.Panel>
                 ))}

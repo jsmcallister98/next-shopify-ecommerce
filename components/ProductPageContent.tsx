@@ -16,7 +16,7 @@ const ProductPageContent: FC<ProductPageContentProps> = ({ product }) => {
   product.images.edges.map((image: any, i: number) => {
     images.push(
       <SwiperSlide key={`slide-${i}`}>
-        <Image src={image.node.originalSrc} alt={image.node.altText} fill />
+        <Image src={image.node.url} alt={image.node.altText} fill />
       </SwiperSlide>
     );
   });

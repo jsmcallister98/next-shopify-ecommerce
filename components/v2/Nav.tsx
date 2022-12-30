@@ -95,7 +95,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-interface NavProps {
+export interface NavProps {
   variant?: "light" | "dark";
 }
 
@@ -270,7 +270,7 @@ export default function Nav({ variant = "light" }: NavProps) {
 
                   <div className="hidden h-full lg:flex">
                     {/* Flyout menus */}
-                    <NavigationMenu />
+                    <NavigationMenu variant={variant} />
                   </div>
 
                   {/* Mobile menu and search (lg-) */}

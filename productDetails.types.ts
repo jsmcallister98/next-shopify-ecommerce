@@ -54,7 +54,7 @@ export interface Edge3 {
 }
 
 export interface Node3 {
-  originalSrc: string;
+  url: string;
   altText: string;
 }
 
@@ -67,7 +67,7 @@ export interface Edge4 {
 }
 
 export interface Node4 {
-  originalSrc: string;
+  url: string;
   altText: string;
 }
 
@@ -99,7 +99,7 @@ export interface SelectedOption {
 }
 
 export interface Image {
-  originalSrc: string;
+  url: string;
   altText: string;
 }
 

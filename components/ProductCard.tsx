@@ -10,7 +10,7 @@ export interface ProductCardProps extends React.HTMLProps<HTMLDivElement> {
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const { handle, title } = product.node;
 
-  const { altText, originalSrc } = product.node.images.edges[0].node;
+  const { altText, url } = product.node.images.edges[0].node;
 
   const price = product.node.priceRange.minVariantPrice.amount;
 
@@ -21,7 +21,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <div className="relative aspect-[7/8] group-hover:opacity-75">
             <Image
               className="object-cover"
-              src={originalSrc}
+              src={url}
               alt={altText}
               fill
             ></Image>

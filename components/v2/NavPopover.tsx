@@ -8,9 +8,9 @@ import {
 } from "@heroicons/react/24/outline";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import cx from "classnames";
+import { NavProps } from "./Nav";
 
-export const NavigationMenu = () => {
-  const variant = "light";
+export const NavigationMenu = ({ variant }: NavProps) => {
   const textColor = variant === "light" ? "text-white" : "text-gray-900";
   const textHoverColor =
     variant === "light" ? "text-gray-200" : "text-gray-700";
@@ -101,7 +101,7 @@ export const NavigationMenu = () => {
             />
 
             <div className="relative bg-white">
-              <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="overflow-hidden rounded-lg border-t border-gray-100 shadow-lg ring-1 ring-black ring-opacity-5">
                 <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
                   {categories.map((item) => (
                     <Link
@@ -162,7 +162,7 @@ export const NavigationMenu = () => {
             />
 
             <div className="relative bg-white">
-              <div className="bg-gray-50 px-5 py-6 sm:p-8">
+              <div className="border-t border-gray-100 bg-white px-5 py-6 sm:p-8">
                 <div>
                   <ul role="list" className="">
                     {collections.map((collection) => (
@@ -226,7 +226,7 @@ export const NavigationMenu = () => {
             "transition-[width_transform] duration-[250ms] ease-[ease]"
           )}
         >
-          <div className="relative top-1 h-2 w-2 rotate-45 bg-white dark:bg-gray-800" />
+          <div className="relative top-1 h-2 w-2 rotate-45 border border-gray-200 bg-white" />
         </NavigationMenuPrimitive.Indicator>
       </NavigationMenuPrimitive.List>
 

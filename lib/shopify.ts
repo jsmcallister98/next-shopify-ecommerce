@@ -4,7 +4,7 @@ const domain = "allisterclark.myshopify.com/";
 const storefrontAccessToken = "011ad0102ffd9b8798e58034ba17433f";
 
 async function ShopifyData(query: any) {
-  const URL = `https://${domain}/api/2021-07/graphql.json`;
+  const URL = `https://${domain}/api/2022-10/graphql.json`;
 
   const options = {
     endpoint: URL,
@@ -29,7 +29,7 @@ async function ShopifyData(query: any) {
 
 export async function getProductsInCollection() {
   const query = `{
-        collectionByHandle(handle: "frontpage") {
+        collection(handle: "frontpage") {
           title
           products(first: 25) {
             edges {
@@ -48,7 +48,7 @@ export async function getProductsInCollection() {
                 images(first: 5) {
                   edges {
                     node {
-                      originalSrc
+                      url
                       altText
                     }
                   }
@@ -61,7 +61,7 @@ export async function getProductsInCollection() {
 
   const response = await ShopifyData(query);
 
-  const allProducts = response.data.collectionByHandle.products.edges ?? [];
+  const allProducts = response.data.collection.products.edges ?? [];
 
   return allProducts;
 }
@@ -89,7 +89,7 @@ export async function getAllProducts() {
 export async function getProduct(handle: any) {
   const query = `
   {
-    productByHandle(handle: "${handle}") {
+    product(handle: "${handle}") {
     	collections(first: 1) {
       	edges {
           node {
@@ -107,7 +107,7 @@ export async function getProduct(handle: any) {
                   images(first: 5) {
                     edges {
                       node {
-                        originalSrc
+                        url
                         altText
                       }
                     }
@@ -125,7 +125,7 @@ export async function getProduct(handle: any) {
       images(first: 5) {
         edges {
           node {
-            originalSrc
+            url
             altText
           }
         }
@@ -143,7 +143,7 @@ export async function getProduct(handle: any) {
               value
             }
             image {
-              originalSrc
+              url
               altText
             }
             title
@@ -159,7 +159,7 @@ export async function getProduct(handle: any) {
 
   const response = await ShopifyData(query);
 
-  const product = response.data.productByHandle ?? [];
+  const product = response.data.product ?? [];
 
   return product;
 }

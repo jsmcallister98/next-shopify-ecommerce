@@ -36,7 +36,7 @@ export default function ProductCardSection({
               <div key={product.node.id} className="group relative">
                 <div className="h-56 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-72 xl:h-80">
                   <img
-                    src={product.node.images.edges[0].node.originalSrc}
+                    src={product.node.images.edges[0].node.url}
                     alt={product.node.images.edges[0].node.altText}
                     className="h-full w-full object-cover object-center"
                   />
