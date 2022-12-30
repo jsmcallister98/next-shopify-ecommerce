@@ -17,7 +17,12 @@ export default function Carousel({ images }: CarouselProps) {
       key={`full-size-slide-${i}`}
       className="relative h-full w-full"
     >
-      <Image src={image.node.url} alt={image.node.altText} fill />
+      <Image
+        className="object-contain"
+        src={image.node.url}
+        alt={image.node.altText}
+        fill
+      />
     </SwiperSlide>
   ));
 
@@ -26,7 +31,12 @@ export default function Carousel({ images }: CarouselProps) {
       key={`small-slide-${i}`}
       className="relative flex h-20 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4 xs:h-24"
     >
-      <Image src={image.node.url} alt={image.node.altText} fill />
+      <Image
+        className="object-cover"
+        src={image.node.url}
+        alt={image.node.altText}
+        fill
+      />
     </SwiperSlide>
   ));
 
@@ -45,7 +55,7 @@ export default function Carousel({ images }: CarouselProps) {
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[Navigation, Thumbs]}
-        className="aspect-w-1 aspect-h-1 h-full w-full"
+        className="aspect-w-1 aspect-h-1 h-[calc(100%-100px)] w-full"
       >
         {fullSizeImages}
       </Swiper>

@@ -130,7 +130,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
   return (
     <div className="bg-white">
-      <div className=" pt-0 pb-16 sm:pb-24 lg:pt-6">
+      <div className="pt-0 pb-16 sm:pb-24 lg:pt-6">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
             {/* Image gallery */}
