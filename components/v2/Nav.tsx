@@ -113,7 +113,7 @@ export default function Nav({ variant = "light" }: NavProps) {
     variant === "light" ? "text-gray-200" : "text-gray-700";
 
   return (
-    <div className="relative z-10 bg-transparent">
+    <div className="relative z-10 bg-transparent pt-4">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -299,8 +299,7 @@ export default function Nav({ variant = "light" }: NavProps) {
                     <div className="flex items-center lg:ml-8">
                       {/* Cart */}
                       <div className="ml-4 flow-root lg:ml-8">
-                        <a
-                          href="#"
+                        <button
                           className="group -m-2 flex items-center p-2"
                           onClick={() => setCartOpen(!cartOpen)}
                         >
@@ -316,7 +315,7 @@ export default function Nav({ variant = "light" }: NavProps) {
                           <span className="sr-only">
                             items in cart, view bag
                           </span>
-                        </a>
+                        </button>
                       </div>
                       <MiniCart cart={cart} />
                       <MobileMiniCart />

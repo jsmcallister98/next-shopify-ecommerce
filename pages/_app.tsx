@@ -4,9 +4,11 @@ import Layout from "@components/Layout/Layout";
 import ShopProvider from "../context/shopContext";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "next-themes";
-import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
-import "swiper/components/pagination/pagination.scss";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();

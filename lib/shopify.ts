@@ -1,7 +1,5 @@
-// const domain = process.env.SHOPIFY_STORE_DOMAIN;
-const domain = "allisterclark.myshopify.com/";
-// const storefrontAccessToken = process.env.SHOPIFY_STOREFRONT_ACCESSTOKEN;
-const storefrontAccessToken = "011ad0102ffd9b8798e58034ba17433f";
+const domain = process.env.SHOPIFY_STORE_DOMAIN;
+const storefrontAccessToken = process.env.SHOPIFY_STOREFRONT_ACCESSTOKEN;
 
 async function ShopifyData(query: any) {
   const URL = `https://${domain}/api/2022-10/graphql.json`;

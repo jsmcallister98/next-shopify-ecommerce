@@ -1,3 +1,4 @@
+import React from "react";
 import { FC } from "react";
 
 export interface ProductOptionsProps extends React.HTMLProps<HTMLDivElement> {
@@ -16,7 +17,7 @@ const ProductOptions: FC<ProductOptionsProps> = ({
   return (
     <fieldset>
       <legend className="text-xl font-semibold">{name}</legend>
-      <div className="inline-flex items-center flex-wrap">
+      <div className="inline-flex flex-wrap items-center">
         {values.map((value: any) => {
           const id = `option-${name}-${value}`;
           const checked = selectedOptions[name] === value;
@@ -35,11 +36,11 @@ const ProductOptions: FC<ProductOptionsProps> = ({
                 }}
               />
               <div
-                className={`p-2 my-3 text-lg rounded-full block cursor-pointer mr-3
+                className={`my-3 mr-3 block cursor-pointer rounded-full p-2 text-lg
                 ${
                   checked
-                    ? "text-white bg-gray-900 dark:text-gray-900 dark:bg-gray-200 dark:border-2 dark:border-indigo-400"
-                    : "text-gray-900 bg-gray-200 dark:text-white dark:bg-gray-900"
+                    ? "bg-gray-900 text-white dark:border-2 dark:border-indigo-400 dark:bg-gray-200 dark:text-gray-900"
+                    : "bg-gray-200 text-gray-900 dark:bg-gray-900 dark:text-white"
                 }`}
               >
                 <span className="px-2">{value}</span>

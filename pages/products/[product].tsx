@@ -10,7 +10,6 @@ export interface ProductPageProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 const ProductPage: FC<ProductPageProps> = ({ product }) => {
-  console.log(product);
   return (
     <div className="min-h-screen">
       <Nav variant="dark" />

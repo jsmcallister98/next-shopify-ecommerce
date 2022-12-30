@@ -10,6 +10,7 @@
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@radix-ui/react-navigation-menu": "^1.1.1",
+    "axios": "^1.2.2",
     "classnames": "^2.3.2",
     "eslint-config-next": "^13.0.5",
     "framer-motion": "^5.5.5",
@@ -18,7 +19,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.47.0",
-    "swiper": "^6.7.5"
+    "swiper": "^8.4.5",
+    "swr": "^2.0.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
