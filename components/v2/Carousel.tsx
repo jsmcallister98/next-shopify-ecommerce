@@ -55,7 +55,7 @@ export default function Carousel({ images }: CarouselProps) {
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[Navigation, Thumbs]}
-        className="aspect-w-1 aspect-h-1 h-[calc(100%-100px)] w-full"
+        className="aspect-w-1 aspect-h-1 h-[calc(100%-100px)] w-full bg-gray-300"
       >
         {fullSizeImages}
       </Swiper>

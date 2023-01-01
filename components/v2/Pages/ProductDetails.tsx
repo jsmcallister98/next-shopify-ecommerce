@@ -40,7 +40,6 @@ interface ProductDetailsProps {
 }
 
 export default function ProductDetails({ product }: ProductDetailsProps) {
-  console.log(product);
   const { data: productInventory } = useSWR(
     `/api/available?id=${product.handle}`,
     fetcher,
@@ -142,7 +141,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               </div>
             </div>
 
-            <div className="mt-32 xs:mt-36 lg:col-span-5 lg:mt-4">
+            <div className="mt-8 xs:mt-10 lg:col-span-5 lg:mt-4">
               <div className="lg:col-span-5 lg:col-start-8">
                 <div className="flex justify-between">
                   <h1 className="text-xl font-medium text-gray-900">
@@ -210,7 +209,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     <h2 className="text-sm font-medium text-gray-900">Size</h2>
                     <button
                       onClick={(e) => e.preventDefault()}
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                      className="text-sm font-medium text-slate-600 hover:text-slate-500"
                     >
                       See sizing chart
                     </button>
@@ -240,10 +239,10 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                                   ? "cursor-pointer focus:outline-none"
                                   : "cursor-not-allowed opacity-25",
                                 active
-                                  ? "ring-2 ring-indigo-500 ring-offset-2"
+                                  ? "ring-2 ring-slate-500 ring-offset-2"
                                   : "",
                                 checked
-                                  ? "border-transparent bg-indigo-600 text-white hover:bg-indigo-700"
+                                  ? "border-transparent bg-slate-600 text-white hover:bg-slate-700"
                                   : "border-gray-200 bg-white text-gray-900 hover:bg-gray-50",
                                 "flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium uppercase sm:flex-1"
                               )
@@ -265,14 +264,14 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                       e.preventDefault();
                       addToCart(selectedVariant);
                     }}
-                    className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-slate-600 py-3 px-8 text-base font-medium text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
                   >
                     Add to cart
                   </button>
                 ) : (
                   <button
                     disabled
-                    className="mt-8 flex w-full cursor-not-allowed items-center justify-center rounded-md border border-transparent bg-indigo-300 py-3 px-8 text-base font-medium text-black focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    className="mt-8 flex w-full cursor-not-allowed items-center justify-center rounded-md border border-transparent bg-slate-300 py-3 px-8 text-base font-medium text-black focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
                   >
                     Out of Stock
                   </button>
@@ -291,7 +290,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 />
               </div>
 
-              <div className="mt-8 border-t border-gray-200 pt-8">
+              <div className="mt-8 border-t border-b border-gray-200 py-8">
                 <h2 className="text-sm font-medium text-gray-900">
                   Fabric &amp; Care
                 </h2>
@@ -346,9 +345,12 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         </div>
       </div>
 
-      <p className="mx-auto w-11/12 max-w-3xl space-y-8 pt-16 text-center md:space-x-4 lg:space-x-8">
-        {product.description}
-      </p>
+      <div className="mx-auto my-4 flex w-11/12 max-w-3xl items-center md:space-x-4 lg:space-x-8">
+        <div>
+          <img src="/images/golfer.svg" alt="golfer icon" />
+        </div>
+        <p className="text-center ">{product.description}</p>
+      </div>
       <RecommendedList
         current={product.id}
         products={product.collections.edges[0].node.products.edges}

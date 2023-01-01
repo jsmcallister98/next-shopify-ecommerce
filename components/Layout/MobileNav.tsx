@@ -81,14 +81,14 @@ export default function MobileNav() {
                 <span className="sr-only">Workflow</span>
                 <img
                   className="h-8 w-auto sm:h-10"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-400.svg"
+                  src="https://tailwindui.com/img/logos/workflow-mark-slate-400.svg"
                   alt=""
                 />
               </a>
             </Link>
           </div>
           <div className="-my-2 -mr-2 flex md:hidden">
-            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-slate-900 dark:text-white">
+            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-slate-500 dark:bg-slate-900 dark:text-white">
               <span className="sr-only">Open menu</span>
               <ChartBarIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -115,12 +115,12 @@ export default function MobileNav() {
                 <div>
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-400.svg"
+                    src="https://tailwindui.com/img/logos/workflow-mark-slate-400.svg"
                     alt="Workflow"
                   />
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-slate-900 dark:text-white">
+                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-slate-500 dark:bg-slate-900 dark:text-white">
                     <span className="sr-only">Close menu</span>
                     <ChartBarIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
@@ -135,7 +135,7 @@ export default function MobileNav() {
                       className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
                     >
                       <item.icon
-                        className="h-6 w-6 flex-shrink-0 text-indigo-600 dark:text-indigo-400"
+                        className="h-6 w-6 flex-shrink-0 text-slate-600 dark:text-slate-400"
                         aria-hidden="true"
                       />
                       <span className="ml-3 text-base font-medium text-gray-900 dark:text-slate-200">

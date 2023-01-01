@@ -123,7 +123,7 @@ const MenuItemVariants = {
 
 const Underline = () => (
   <motion.div
-    className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-blue-700 via-cyan-300 to-emerald-400"
+    className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-blue-700 via-slate-300 to-slate-400"
     layoutId="underline"
     layout
   >

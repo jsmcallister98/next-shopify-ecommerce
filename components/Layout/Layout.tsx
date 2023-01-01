@@ -1,7 +1,6 @@
 import { FC } from "react";
 import Nav from "./Nav";
-import Footer from "./Footer";
-
+import Footer from "../v2/Footer";
 export interface LayoutProps extends React.HTMLProps<HTMLDivElement> {}
 
 const Layout: FC<LayoutProps> = ({ children }) => {
@@ -9,7 +8,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <div className="flex min-h-screen flex-col justify-between bg-white dark:bg-slate-900">
       {/* <Nav /> */}
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

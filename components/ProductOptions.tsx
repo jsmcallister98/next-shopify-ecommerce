@@ -39,7 +39,7 @@ const ProductOptions: FC<ProductOptionsProps> = ({
                 className={`my-3 mr-3 block cursor-pointer rounded-full p-2 text-lg
                 ${
                   checked
-                    ? "bg-gray-900 text-white dark:border-2 dark:border-indigo-400 dark:bg-gray-200 dark:text-gray-900"
+                    ? "bg-gray-900 text-white dark:border-2 dark:border-slate-400 dark:bg-gray-200 dark:text-gray-900"
                     : "bg-gray-200 text-gray-900 dark:bg-gray-900 dark:text-white"
                 }`}
               >

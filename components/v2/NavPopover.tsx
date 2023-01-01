@@ -109,7 +109,7 @@ export const NavigationMenu = ({ variant }: NavProps) => {
                       href={item.href}
                       className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50"
                     >
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-slate-500 text-white sm:h-12 sm:w-12">
                         <item.icon className="h-6 w-6" aria-hidden="true" />
                       </div>
                       <div className="ml-4">
@@ -125,7 +125,7 @@ export const NavigationMenu = ({ variant }: NavProps) => {
                   <div className="text-sm font-medium">
                     <Link
                       href="#"
-                      className="text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500"
+                      className="text-slate-600 transition duration-150 ease-in-out hover:text-slate-500"
                     >
                       Shop all products
                       <span aria-hidden="true"> &rarr;</span>
@@ -194,7 +194,7 @@ export const NavigationMenu = ({ variant }: NavProps) => {
                 <div className="mt-6 text-sm font-medium">
                   <Link
                     href="#"
-                    className="text-indigo-600 transition duration-150 ease-in-out hover:text-indigo-500"
+                    className="text-slate-600 transition duration-150 ease-in-out hover:text-slate-500"
                   >
                     View all collections
                     <span aria-hidden="true"> &rarr;</span>

@@ -23,7 +23,7 @@ export default function ProductCardSection({
           </h2>
           <Link
             href={link}
-            className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block"
+            className="hidden text-sm font-medium text-slate-600 hover:text-slate-500 md:block"
           >
             Shop Now
             <span aria-hidden="true"> &rarr;</span>
@@ -61,7 +61,7 @@ export default function ProductCardSection({
         <div className="mt-8 text-sm md:hidden">
           <Link
             href="#"
-            className="font-medium text-indigo-600 hover:text-indigo-500"
+            className="font-medium text-slate-600 hover:text-slate-500"
           >
             Shop the collection
             <span aria-hidden="true"> &rarr;</span>

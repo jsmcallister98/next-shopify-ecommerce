@@ -161,7 +161,7 @@ export default function Nav({ variant = "light" }: NavProps) {
                           className={({ selected }) =>
                             classNames(
                               selected
-                                ? "border-indigo-600 text-indigo-600"
+                                ? "border-slate-600 text-slate-600"
                                 : "border-transparent text-gray-900",
                               "flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium"
                             )
@@ -262,7 +262,7 @@ export default function Nav({ variant = "light" }: NavProps) {
                       <span className="sr-only">Your Company</span>
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                        src="https://tailwindui.com/img/logos/mark.svg?color=slate&shade=600"
                         alt=""
                       />
                     </Link>
@@ -289,7 +289,7 @@ export default function Nav({ variant = "light" }: NavProps) {
                   <Link href="/" className="lg:hidden">
                     <span className="sr-only">Your Company</span>
                     <img
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                      src="https://tailwindui.com/img/logos/mark.svg?color=slate&shade=600"
                       alt=""
                       className="h-8 w-auto"
                     />
