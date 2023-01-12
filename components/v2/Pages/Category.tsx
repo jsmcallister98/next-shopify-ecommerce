@@ -73,7 +73,7 @@ export default function Category({ products }: CategoryProps) {
             src="https://tailwindui.com/img/ecommerce-images/home-page-01-hero-full-width.jpg"
             alt=""
             className="h-full w-full object-cover object-center"
-            layout="fill"
+            fill
           />
         </div>
         <div
