@@ -10,7 +10,7 @@ export interface MiniCartProps extends React.HTMLProps<HTMLDivElement> {
   cart: any;
 }
 const MiniCart: FC<MiniCartProps> = ({ cart }) => {
-  const { cartOpen, setCartOpen, checkoutUrl, removeCartItem } =
+  const { cartOpen, setCartOpen, checkoutUrl, removeCartItem, changeQuantity } =
     useContext(CartContext);
   const cancelButtonRef = useRef(null);
 
@@ -69,7 +69,11 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
                         </button>
                       </div>
                     </div>
-
+                    {cart.length === 0 && (
+                      <div className="mt-16 flex justify-center text-base font-medium text-gray-900 dark:text-white">
+                        <p>Your cart is currently empty.</p>
+                      </div>
+                    )}
                     <div className="mt-8">
                       <div className="flow-root">
                         <ul
@@ -120,9 +124,38 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
                                   </p>
                                 </div>
                                 <div className="flex flex-1 items-end justify-between text-sm">
-                                  <p className="text-gray-500 dark:text-gray-300">
+                                  {/* <p className="text-gray-500 dark:text-gray-300">
                                     Qty {product.variantQuantity}
-                                  </p>
+                                  </p> */}
+                                  <div className="mt-4 sm:mt-0 sm:pr-9">
+                                    <label
+                                      htmlFor={`quantity-${product.variantTitle}`}
+                                      className="sr-only"
+                                    >
+                                      Quantity, {product.name}
+                                    </label>
+                                    <select
+                                      onChange={(e) => {
+                                        changeQuantity(
+                                          product,
+                                          parseInt(e.target.value)
+                                        );
+                                      }}
+                                      defaultValue={product.variantQuantity}
+                                      id={`quantity-${product.variantTitle}`}
+                                      name={`quantity-${product.variantTitle}`}
+                                      className="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                                    >
+                                      <option value={1}>1</option>
+                                      <option value={2}>2</option>
+                                      <option value={3}>3</option>
+                                      <option value={4}>4</option>
+                                      <option value={5}>5</option>
+                                      <option value={6}>6</option>
+                                      <option value={7}>7</option>
+                                      <option value={8}>8</option>
+                                    </select>
+                                  </div>
 
                                   <div className="flex">
                                     <button
@@ -152,8 +185,8 @@ const MiniCart: FC<MiniCartProps> = ({ cart }) => {
                       </p>
                       <div className="mt-6">
                         <a
-                          href={checkoutUrl}
-                          className="flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-800 dark:bg-slate-400 dark:text-black dark:hover:bg-slate-500"
+                          href={checkoutUrl || "#"}
+                          className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-800 dark:bg-slate-400 dark:text-black dark:hover:bg-slate-500"
                         >
                           Checkout
                         </a>

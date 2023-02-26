@@ -16,12 +16,12 @@ async function ShopifyData(query: any) {
   };
 
   try {
-    const data = await fetch(URL, options).then((response) => response.json());
-
+    const data = await fetch(URL, options).then((response) => {
+      return response.json();
+    });
     return data;
   } catch (error) {
     console.log(error);
-    // throw new Error("Products not fetched");
   }
 }
 
@@ -177,7 +177,7 @@ export async function createCheckout(id: string, quantity: number) {
 
   const response = await ShopifyData(query);
 
-  const checkout = response.data.checkoutCreate.checkout ?? [];
+  const checkout = response?.data?.checkoutCreate?.checkout ?? [];
 
   return checkout;
 }
@@ -210,8 +210,9 @@ export async function updateCheckout(id: string, lineItems: any[]) {
   }`;
 
   const response = await ShopifyData(query);
+  console.log(response);
 
-  const checkout = response.data.checkoutLineItemsReplace.checkout ?? [];
+  const checkout = response?.data?.checkoutLineItemsReplace?.checkout ?? [];
 
   return checkout;
 }

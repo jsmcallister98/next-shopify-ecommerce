@@ -67,6 +67,28 @@ const ShopProvider: FC<ShopProviderProps> = ({ children }) => {
     }
   }
 
+  async function changeQuantity(updatedItem: any, quantity: number) {
+    let newCart: any[] = [];
+    let added = false;
+
+    cart.map((item: any) => {
+      if (item.id === updatedItem.id) {
+        item.variantQuantity = quantity;
+        newCart = [...cart];
+        added = true;
+      }
+    });
+
+    if (!added) {
+      newCart = [...cart, updatedItem];
+    }
+
+    setCart(newCart);
+    const newCheckout = await updateCheckout(checkoutId, newCart);
+
+    localStorage.setItem("checkout_id", JSON.stringify([newCart, newCheckout]));
+  }
+
   async function removeCartItem(itemToRemove: any) {
     const updatedCart = cart.filter((item) => item.id !== itemToRemove);
 
@@ -87,6 +109,7 @@ const ShopProvider: FC<ShopProviderProps> = ({ children }) => {
         cart,
         cartOpen,
         setCartOpen,
+        changeQuantity,
         addToCart,
         removeCartItem,
         checkoutUrl,
